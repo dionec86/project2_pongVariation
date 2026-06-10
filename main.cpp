@@ -10,11 +10,11 @@ constexpr int SCREEN_WIDTH  = 1000,
 constexpr float PADDLE_POS = 450.0f, // 490.0f
                 FIXED_TIMESTEP   = 1.0f / 60.0f;
 
-constexpr char  STARTSCREEN[] = "assets/game/background-desert.jpg",
+constexpr char  STARTSCREEN[] = "assets/game/background-desert.png",
                 BACKGROUND[] = "assets/game/background-clean.png",
                 ENDSCREEN[] = "assets/game/background-folders.png",
-                LEFTWINSCREEN[] = "assets/game/background-split.jpg",
-                RIGHTWINSCREEN[] = "assets/game/background-split copy.jpg",
+                LEFTWINSCREEN[] = "assets/game/background-leftWin.png",
+                RIGHTWINSCREEN[] = "assets/game/background-rightWin.png",
                 SCROLLBAR[] = "assets/game/scrollbar.png",
                 SCREENSHOT[] = "assets/game/screenshot.png";
 constexpr Vector2 ORIGIN      = { SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2 };
@@ -255,9 +255,9 @@ void render()
             renderBackground(&gBackgroundTexture);
 
             gLeftPaddle->render();
-            gLeftPaddle->displayCollider();
+            // gLeftPaddle->displayCollider();
             gRightPaddle->render();
-            gRightPaddle->displayCollider();
+            // gRightPaddle->displayCollider();
 
             for (Entity* e : gBalls) {
                 e->render();
